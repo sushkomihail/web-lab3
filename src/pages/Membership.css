@@ -1,0 +1,102 @@
+.membership {
+  padding: 40px 0;
+}
+
+.membership-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.membership-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.plan-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.plan-card:hover {
+  border-color: #54c47f;
+  transform: translateY(-5px);
+}
+
+.plan-card.selected {
+  border-color: #54c47f;
+  background: #f8f9ff;
+}
+
+.plan-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.price {
+  margin-bottom: 1.5rem;
+}
+
+.amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.period {
+  color: #666;
+  font-size: 1rem;
+}
+
+.features-list {
+  list-style: none;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.features-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.select-btn {
+  width: 100%;
+  padding: 12px;
+  background: #54c47f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.select-btn:hover {
+  background: #b6b6b6;
+}
+
+.membership-cta {
+  text-align: center;
+  padding: 4rem 0;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.membership-cta h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}

@@ -1,0 +1,57 @@
+.header {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 20px;
+}
+
+.logo h1 {
+  color: #54c47f;
+  font-size: 1.5rem;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-btn.active {
+  color: black;
+}
+
+.nav-btn:hover {
+  background: #f8f9fa;
+}
+
+.cta-button {
+  background: #54c47f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+}
