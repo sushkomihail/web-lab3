@@ -21,9 +21,6 @@ const Footer = () => {
             <p>Сб-Вс: 8:00 - 22:00</p>
           </div>
         </div>
-        <div className="footer-bottom">
-          <p>&copy; 2024 "Жим-Жим". Все права защищены.</p>
-        </div>
       </div>
     </footer>
   );
