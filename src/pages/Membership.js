@@ -1,29 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './Membership.css';
 
-const Membership = () => {
-  const [selectedPlan, setSelectedPlan] = useState(null);
+const api = axios.create({
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000/api',
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
-  const plans = [
-    {
-      id: 1,
-      name: 'Разовый чик-чирик',
-      price: '500',
-      period: 'занятие',
-    },
-    {
-      id: 2,
-      name: 'Месячный',
-      price: '1 500',
-      period: 'месяц',
-    },
-    {
-      id: 3,
-      name: 'Годовой',
-      price: '12 000',
-      period: 'год',
+const Membership = () => {
+  const [plans, setPlans] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchPlans = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await api.get('/plans');
+      setPlans(response.data);
+
+    } catch (err) {
+      console.error('Ошибка при загрузке:', err);  
+      setError(err);
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
+
+  useEffect(() => {
+    fetchPlans();
+  }, []);
 
   return (
     <div className="membership">
@@ -35,19 +45,18 @@ const Membership = () => {
 
         <div className="plans-grid">
           {plans.map(plan => (
-            <div 
-              key={plan.id} 
-              className={`plan-card ${selectedPlan === plan.id ? 'selected' : ''}`}
-              onClick={() => setSelectedPlan(plan.id)}
-            >
+            <div key={plan.id} className="plan-card" >
               <h3>{plan.name}</h3>
+              
+              {plan.description && (
+                <p className="plan-description">{plan.description}</p>
+              )}
+              
               <div className="price">
                 <span className="amount">{plan.price} ₽</span>
                 <span className="period">/{plan.period}</span>
               </div>
-              <button className="select-btn">
-                {selectedPlan === plan.id ? 'Оформлено' : 'Оформить'}
-              </button>
+              <button className="select-btn">Оформить</button>
             </div>
           ))}
         </div>

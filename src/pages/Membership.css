@@ -89,6 +89,13 @@
   background: #b6b6b6;
 }
 
+.plan-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 10px 0;
+  min-height: 40px;
+}
+
 .membership-cta {
   text-align: center;
   padding: 4rem 0;

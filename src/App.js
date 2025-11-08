@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Clubs from './pages/Clubs';
-import Membership from './pages/Membership';
+import Header from './components/Header.js';
+import Footer from './components/Footer.js';
+import Home from './pages/Home.js';
+import Clubs from './pages/Clubs.js';
+import Membership from './pages/Membership.js';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
